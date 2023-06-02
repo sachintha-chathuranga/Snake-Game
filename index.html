@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://kit.fontawesome.com/52c4495eb0.js" crossorigin="anonymous"></script>
+    <title>Snake Board</title>
+</head>
+<body>
+
+    <div class="menuContainer">
+        <div class="navBar">
+            <h2>Snake Game</h2>
+        </div>
+        <div class="menuBody">
+            <h1>Welcome to Snake Game Board</h1>
+            <span class="maxScore2"></span>
+            <form id="myForm">
+                <div>
+                    <input value="300"  type="radio" name="dificulty" id="easy" checked>
+                    <label for="easy">Easy</label>
+                </div>
+                <div>
+                    <input value="200" type="radio" name="dificulty" id="mediam" >
+                    <label for="mediam">Mediam</label>
+                </div>
+                <div>
+                    <input value="100" type="radio" name="dificulty" id="hard" >
+                    <label for="hard">Hard</label> 
+                </div>
+                <button type="submit">Play</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="message">
+            <div class="msgBoxtitle">Message</div>
+            <h2>Game Over</h2>
+            <div class="btnContainer">
+                <button onclick="exitGame()" >Menu</button>
+                <button onclick="restartGame()" >Replay</button>
+            </div>
+        </div>
+        <div class="topBar">   
+            <span class="score">Score: 0</span>
+            <span class="maxScore"></span>
+        </div>
+        <div class="board">
+            
+        </div>
+        <div class="controls">
+            <span data-key="ArrowUp"><i class="fa-solid fa-arrow-up-long"></i></span>
+            <div class="bottom">
+                <span data-key="ArrowLeft"><i class="fa-solid fa-arrow-left-long"></i></span>
+                <span data-key="ArrowDown"><i class="fa-solid fa-arrow-down-long"></i></span>
+                <span data-key="ArrowRight"><i class="fa-solid fa-arrow-right-long"></i></span>
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/script.js"></script>
+</body>
+</html>

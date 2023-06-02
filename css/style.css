@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+:root{
+    --theme-color: rgb(35, 41, 66);
+    --text-color: rgb(193 205 255);
+    --topbar-color: #44567a;
+    --background-color: #ebebf5;
+    --food-color: red;
+    --snake-color: rgb(78, 233, 78);
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: var(--background-color);
+}
+
+.menuContainer.active{
+    display: none;
+}
+.menuContainer .navBar{
+    padding: 10px;
+    background-color: var(--topbar-color);
+    color: #54d3e7;
+}
+
+.menuContainer .navBar h2{
+    margin-left: 10px;
+    font-size: 21px;
+    font-weight: 500;
+}
+
+.menuContainer .menuBody{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    color: whitesmoke;
+}
+.menuContainer .menuBody h1{
+    
+    font-size: 25px;
+    font-weight: 500;
+    margin-top: 20px;
+}
+.menuContainer .menuBody form div{
+    margin-bottom: 17px;
+}
+.menuContainer .menuBody form input:checked + label{
+    color: #1da7f7;
+}
+.menuContainer .menuBody form input{
+    display: none;
+}
+.menuContainer .menuBody form div:last-of-type{
+    margin-bottom: 80px;
+}
+.menuContainer .menuBody form button{
+    color: white;
+    margin-bottom: 25px;
+    padding: 10px 54px;
+    border: none;
+    background-color: #1da7f7;
+    border-radius: 2px;
+    cursor: pointer;
+    font-size: 17px;
+}
+.menuContainer .menuBody form button:hover{
+    color: var(--theme-color);
+    background-color: whitesmoke;
+}
+.menuContainer{
+    position: relative;
+    width: 65vmin;
+    background-color: var(--theme-color);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border-radius: 4px;
+    height: 70vmin;
+}
+.container{
+    position: relative;
+    width: 65vmin;
+    background-color: var(--theme-color);
+    display: none;
+    flex-direction: column;
+    overflow: hidden;
+    border-radius: 4px;
+    height: 70vmin;
+}
+
+.container.active{
+    display: flex;
+}
+
+.container .message{
+    display: none;
+    width: 70%;
+    position: absolute;
+    align-self: center;
+    top: 34%;
+    z-index: 5;
+    color: white;
+    border: 2px solid;
+    border-color: var(--topbar-color);
+    background-color: var(--theme-color);
+    text-align: center;
+}
+.message.active{
+    display: block;
+}
+.container .message .msgBoxtitle{
+    background-color: var(--topbar-color);
+    padding: 6px;
+    font-size: 18px;
+    font-weight: 200;
+    text-align: center;
+    color: var(--text-color);
+}
+.container .message h2{
+    margin: 45px;
+    font-size: 22px;
+    font-weight: 200;
+}
+.container .message .btnContainer{
+    display: flex;
+    justify-content: space-evenly;
+    margin: 10px;
+}
+
+.container .message .btnContainer button{
+    border: 1px solid var(--topbar-color);
+    background: none;
+    color: var(--text-color);
+    padding: 5px 34px;
+    cursor: pointer;
+}
+.container .message .btnContainer button:hover{
+    color: white;
+    border: none;
+    background-color: rgb(33, 158, 230);
+}
+
+.topBar{
+    color: var(--text-color);
+    font-weight: 500;
+    padding: 20px 27px;
+    background-color: var(--topbar-color);
+    display: flex;
+    justify-content: space-between;
+    border-radius: 4px 4px 0 0;
+}
+.board{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template: repeat(30, 1fr) / repeat(30, 1fr);
+}
+
+.board .food{
+    background-color: var(--food-color);
+    border-radius: 50%;
+}
+.board .snakeHead{
+    background-color: var(--snake-color);
+}
+.board.up .food + .snakeHead{
+    border-radius: 10px 10px 0 0;
+}
+.board.down .food + .snakeHead{
+    border-radius: 0 0 10px 10px;
+}
+.board.left .food + .snakeHead{
+    border-radius: 10px 0 0 10px;
+}
+.board.right .food + .snakeHead{
+    border-radius: 0 10px 10px 0;
+}
+
+.controls{
+    color: var(--text-color);
+    background-color: var(--topbar-color);
+    padding: 3px 0;
+    text-align: center;
+    display: none;
+}
+
+.controls span {
+    display: inline-block;
+    background-color: var(--theme-color);
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 3px;
+    cursor: pointer;
+}
+.controls .bottom{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media screen and (max-width: 800px){
+    .container{
+        width: 90vmin;
+        height: 110vmin;
+    }
+    .topBar{
+        padding: 15px 27px;
+    }
+    .controls{
+        display: block;
+    }
+}
+@media screen and (max-width: 460px){
+    .container{
+        width: 100vmin;
+        height: 130vmin;
+    }
+    .container .message{
+        top: 29%;
+    }
+    .container .message .msgBoxtitle{
+        font-size: 15px;
+    }
+    .container .message h2{
+        font-size: 19px;
+    }
+    .container .message .btnContainer{
+        margin: 6px;
+    }
+    .container .message .btnContainer button{
+        padding: 5px 24px;
+    }
+
+    .menuContainer{
+        width: 100vmin;
+        height: 130vmin;
+    }
+    
+    .menuContainer .navBar h2{
+        margin-left: 7px;
+        font-size: 18px;
+    }
+    .menuContainer .menuBody h1{
+        font-size: 21px;
+        margin-top: 40px;
+    }
+    .menuContainer .menuBody form div{
+        margin-bottom: 44px;
+    }
+    .menuContainer .menuBody form div:last-of-type{
+        margin-bottom: 108px;
+    }
+    .menuContainer .menuBody form button{
+        margin-bottom: 36px;
+        padding: 5px 36px;
+        font-size: 15px;
+    }
+    
+}
