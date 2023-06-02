@@ -244,25 +244,28 @@ body{
 
     .menuContainer{
         width: 100vmin;
-        height: 130vmin;
+        height: 100vh;
     }
     
     .menuContainer .navBar h2{
         margin-left: 7px;
         font-size: 18px;
     }
+    .menuContainer .menuBody {
+        justify-content: space-around;
+    }
     .menuContainer .menuBody h1{
         font-size: 21px;
         margin-top: 40px;
     }
     .menuContainer .menuBody form div{
-        margin-bottom: 44px;
+        margin-bottom: 22px;
     }
     .menuContainer .menuBody form div:last-of-type{
-        margin-bottom: 108px;
+        margin-bottom: 72px;
     }
     .menuContainer .menuBody form button{
-        margin-bottom: 36px;
+        margin-bottom: 136px;
         padding: 5px 36px;
         font-size: 15px;
     }
